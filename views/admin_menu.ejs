@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <section class="section">
+    <ul class="admin__table">
+      <li>
+        <ol class="admin__table-thead">
+          <li>餐點名稱</li>
+          <li>餐點圖片</li>
+          <li>餐點價錢</li>
+          <li> </li>
+        </ol>
+      </li>
+      <% menus.forEach(menu => { %>
+        <li>
+          <ol class="admin__table-tbody">
+            <li><%= menu.mealname %></li>
+            <li class="tbody__full"><%= menu.mealimg %></li>
+            <li>$<%= menu.price %></li>
+            <li>
+              <a href="/update-menu/<%= menu.id %>" class="admin__table-btn">編輯</a>
+              <a href="/delete-menu/<%= menu.id %>" class="admin__table-btn">刪除</a>
+            </li>
+          </ol>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="/edit-menu" class="admin__table-btn admin__table-btn-right">新增</a>
+  </section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <section class="section">
+    <form action="/edit-menu" method="POST" class="form">
+      <% if (errorMessage) { %>
+        <h3><%= errorMessage %></h3>
+      <% } %>
+      <div class="form__input">
+        <div>
+          <label for="mealname">餐點名稱：</label>
+          <input type="text" placeholder="餐點名稱" name="mealname">
+        </div>
+        <div>
+          <label for="mealimg">餐點圖片：</label>
+          <input type="text" placeholder="餐點圖片" name="mealimg">
+        </div>
+        <div>
+          <label for="price">餐點價錢：</label>
+          <input type="text" placeholder="餐點價錢" name="price">
+        </div>
+      </div>
+      <input type="submit" value="送出" class="form__btn">
+    </form>
+  </section>
+
+</body>
+</html>

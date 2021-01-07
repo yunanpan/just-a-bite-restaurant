@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <section class="section">
+    <h1 class="success__title">您已訂購成功</h1>
+    <div class="success__info">
+      <div class="success__category">
+        <h3 class="success__subtitle">購買人資訊</h3>
+        <p>
+          <span>訂單編號</span><%= result[0].id %>
+        </p>
+        <p>
+          <span>姓名</span><%= result[0].name %>
+        </p>
+        <p>
+          <span>電話</span><%= result[0].phone %>
+        </p>
+        <p>
+          <span>電子郵件</span><%= result[0].email %>
+        </p>
+        <p>
+          <span>地址</span><%= result[0].location %>
+        </p>
+      </div>
+      <div>
+        <h3 class="success__subtitle">購買商品資訊</h3>
+        <% let sum = 0 %>
+        <% const cart = result[0].Carts[0] %>
+        <% for (let i = 0; i < JSON.parse(cart.product).length; i += 1) { %>
+          <div class="success__product">
+            <p><%= JSON.parse(cart.product)[i] %></p>
+            <p>
+              <span>單價</span>$<%= JSON.parse(cart.price)[i] %>
+            </p>
+            <p>共 <%= JSON.parse(cart.quanlity)[i] %> 件</p>
+          </div>
+          <% sum += JSON.parse(cart.price)[i] * JSON.parse(cart.quanlity)[i] %>
+        <% } %>
+      </div>
+      <p class="success__total">
+        <span>總價</span>$<%= sum %>
+      </p>
+      <a href="/" class="success__btn">回首頁</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <%- include('./template/footer') %>
+</body>
+</html>

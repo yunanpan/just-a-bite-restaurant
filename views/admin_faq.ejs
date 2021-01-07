@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <section class="section">
+    <ul class="admin__table">
+      <li>
+        <ol class="admin__table-thead">
+          <li>標題</li>
+          <li>內容</li>
+          <li>順序</li>
+          <li> </li>
+        </ol>
+      </li>
+      <% faqs.forEach(faq => { %>
+        <li>
+          <ol class="admin__table-tbody">
+            <li><%= faq.title %></li>
+            <li class="tbody__full"><%= faq.content %></li>
+            <li><%= faq.order %></li>
+            <li>
+              <a href="/update-faq/<%= faq.id %>" class="admin__table-btn">編輯</a>
+              <a href="/delete-faq/<%= faq.id %>" class="admin__table-btn">刪除</a>
+            </li>
+          </ol>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="/edit-faq" class="admin__table-btn admin__table-btn-right">新增</a>
+  </section>
+
+</body>
+</html>
+

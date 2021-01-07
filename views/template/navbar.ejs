@@ -1,0 +1,17 @@
+<nav>
+  <div class="navbar">
+    <div>
+      <a href="/" class="navbar__logo">Just A Bite!</a>
+    </div>
+    <div class="navbar__options">
+      <a href="/prize" class="navbar__option">抽個大獎</a>
+      <a href="/menu" class="navbar__option">我要點餐</a>
+      <a href="/cart" class="navbar__option">查詢訂單</a>
+      <a href="/faq" class="navbar__option">常見問題</a>
+      <a href="/admin" class="navbar__option">管理後臺</a>
+      <% if (username) { %>
+        <a href="/logout" class="navbar__option">管理員登出</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

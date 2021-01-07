@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <section class="section">
+    <form action="/edit-prize" method="POST" class="form">
+      <% if (errorMessage) { %>
+        <h3><%= errorMessage %></h3>
+      <% } %>
+      <div class="form__input">
+        <div>
+          <label for="name">獎品名稱：</label>
+          <input type="text" placeholder="獎品名稱" name="name">
+        </div>
+        <div>
+          <label for="imgLink">圖片網址：</label>
+          <input type="text" placeholder="圖片網址" name="imgLink">
+        </div>
+        <div>
+          <label for="description">說明：</label>
+          <input type="text" placeholder="說明" name="description">
+        </div>
+        <div>
+          <label for="probability">機率：</label>
+          <input type="text" placeholder="機率" name="probability">
+        </div>
+      </div>
+      <input type="submit" value="送出" class="form__btn">
+    </form>
+  </section>
+
+</body>
+</html>

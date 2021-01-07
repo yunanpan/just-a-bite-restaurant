@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <!-- banner section -->
+  <section class="banner">
+    <div class="banner__img-menu"></div>
+  </section>
+
+  <section class="section">
+    <!-- 已確認加入購物車提醒 -->
+    <% if (isAdd === true) { %>
+      <div class="notice__alert">
+        <h3>您已成功新增！</h3>
+        <button>確定</button>
+      </div>
+    <% } %>
+    <h1 class="title">熱銷搶購中</h1>
+    <div class="menu__images">
+      <div class="menu__image">
+        <img src="./img/menu/ad-01.png">
+      </div>
+      <div class="menu__image">
+        <img src="./img/menu/ad-02.png">
+      </div>
+      <div class="menu__image">
+        <img src="./img/menu/ad-03.png">
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu__ad">
+    <div class="menu__ad-img">
+      <img src="./img/menu/order-ad.png">
+    </div>
+    <div class="menu__ad-desc">
+      <h3>在家也能輕鬆<br>咬一口我們的鮮甜清爽</h3>
+      <p>您再也不必受限於時間或地點，隨時隨地透過我們24小時的線上購物選購，咬一口廚房堅持以細選食材、輕盈口感，呈現食材本身的原滋原味。</p>
+      <p>我們將咬一口的經典菜色研發製成相應當季的包裝食品及各式精美的伴手禮盒。將剛出爐的新鮮迅速送達家人手中，也適合與更多喜愛咬一口的親朋好友分享難得的健康滋味。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="menu__pick-title">
+      <p>立即輕鬆選購</p>
+      <div class="menu__arrow"></div>
+    </div>
+    <div class="menu__pick">
+      <% menus.forEach( menu => { %>
+        <div class="menu__pick-card">
+          <img src="<%= menu.mealimg %>">
+          <h3><%= menu.mealname %> | $<%= menu.price %></h3>
+          <a href="/addcart?product=<%= menu.mealname %>&price=<%= menu.price %>">加入購物車</a>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- 我們在哪裡 -->
+  <section class="section">
+    <div class="menu__pick-title">
+      <p>還 是 想 要 親 身 體 會 我 們 的 服 務 ？</p>
+      <div class="menu__arrow"></div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0028901837136!2d121.56235021495837!3d25.03397598397231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q61N-iZnw!5e0!3m2!1szh-TW!2stw!4v1595574664552!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </section>
+
+  <!-- FOOTER -->
+  <%- include('./template/footer') %>
+  <script src="/js/notice.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+  <section class="section section__cart">
+    <!-- 數量已確認修改提醒 -->
+    <% if (isUpdated === true) { %>
+      <div class="notice__alert">
+        <h3>您已成功新增！</h3>
+        <button>確定</button>
+      </div>
+    <% } %>
+
+    <h1 class="cart__title">購物清單</h1>
+    <div class="cart">
+      <ul class="cart__table">
+        <li class="cart__head">
+          <ol class="cart__table-thead">
+            <li class="cart__table-shrink">#</li>
+            <li> </li>
+            <li> </li>
+            <li>商品</li>
+            <li>價格</li>
+            <li>數量</li>
+            <li>小計</li>
+          </ol>
+        </li>
+          <% let sum = 0 %>
+          <% if (products) { %>
+            <% for (let i = 0; i < JSON.parse(cart.product).length; i += 1) { %>
+              <li class="cart__body">
+                <ol class="cart__table-tbody">
+                  <li class="cart__table-shrink"><%= i + 1 %></li>
+                  <li>
+                    <div class="cart__btn">
+                      <a href="/delete-cart/<%= i %>">刪除</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="cart__img">
+                      <img src="https://i.imgur.com/sQDXvA7.png">
+                    </div>
+                  </li>
+                  <li><%= JSON.parse(cart.product)[i]  %></li>
+                  <li>$<%= JSON.parse(cart.price)[i] %></li>
+                  <!-- 調整數量 -->
+                  <li>
+                    <form action="/update-cart/<%= i %>" method="POST">
+                      <input type="text" value="<%= JSON.parse(cart.quanlity)[i] %>" name="quanlity">
+                    </form>
+                  </li>     
+                  <li class="sum">$<%= JSON.parse(cart.price)[i] * JSON.parse(cart.quanlity)[i]  %></li>
+                </ol>
+              </li>
+              <% sum += JSON.parse(cart.price)[i] * JSON.parse(cart.quanlity)[i] %>
+            
+            <% } %>
+          <% } %>
+
+        <!-- === -->
+        <!-- 暫不管總計 -->
+        <!-- <tr class="cart__footer">
+          <td colspan="7">
+            小計：$920
+          </td>
+        </tr>
+        <tr class="cart__footer">
+          <td colspan="7">
+            購物滿1000免運！ 運費：$99
+          </td>
+        </tr> -->
+        <!-- ==== -->
+        <li class="cart__footer">
+          <td colspan="7">
+            $<%= sum %>
+          </td>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section__cart">
+    <h1 class="cart__title">帳單資訊</h1>
+    <% if (errorMessage) { %>
+      <h3><%= errorMessage %></h3>
+    <% } %>
+    <form action="/cart" method="POST" class="cart__form">
+      <div>
+        <p class="cart__require">姓名：</p>
+        <input type="text" name="name">
+      </div>
+      <div>
+        <p class="cart__require">連絡電話：</p>
+        <input type="text" name="phone">
+      </div>
+      <div>
+        <p class="cart__require">電子郵件：</p>
+        <input type="text" name="email">
+      </div>
+      <div>
+        <p class="cart__require">送餐地點：</p>
+        <input type="text" name="location">
+      </div>
+      <input type="submit" value="確認送出" class="cart__submit">
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <%- include('./template/footer') %>
+  <script src="/js/notice.js"></script>
+</body>
+</html>

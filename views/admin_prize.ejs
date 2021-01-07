@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./template/head') %>
+<body>
+  <!-- 導覽列 -->
+  <%- include('./template/navbar') %>
+
+  <section class="section">
+    <ul class="admin__table">
+      <li>
+        <ol class="admin__table-thead">
+          <li>獎品名稱</li>
+          <li>圖片網址</li>
+          <li>說明</li>
+          <li>機率</li>
+          <li> </li>
+        </ol>
+      </li>
+      <% prizes.forEach(prize => { %>
+        <li>
+          <ol class="admin__table-tbody">
+            <li><%= prize.name %></li>
+            <li class="tbody__full"><%= prize.imgLink %></li>
+            <li><%= prize.description %></li>
+            <li><%= prize.probability %></li>
+            <li>
+              <a href="/update-prize/<%= prize.id %>" class="admin__table-btn">編輯</a>
+              <a href="/delete-prize/<%= prize.id %>" class="admin__table-btn">刪除</a>
+            </li>
+          </ol>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="/edit-prize" class="admin__table-btn admin__table-btn-right">新增</a>
+  </section>
+
+</body>
+</html>
+

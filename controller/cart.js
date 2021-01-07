@@ -152,7 +152,6 @@ const cart = {
           },
         }
       ).then(() => {
-        console.log("done");
         CustomerData.findAll({
           where: {
             id: customer.id,

@@ -1,11 +1,13 @@
-# 餐廳
+# 咬一口餐廳
 
-主要為使用 Express + Sequlize 所實作的餐廳網站。ORM 架構  
-利用 nginx 部署在 aws ubuntu 主機上，再將 IP 位置架到網域上。
+主要為使用 Express + Sequlize 所實作的餐廳網站。 
+利用 nginx 及 PM2 部署在 AWS EC2 Ubuntu 主機上，並架設到指定網域。
 
 ## DEMO 網址：
 
 http://restaurant.yunan.tw/
+
+![](./readmeImg/homepage.PNG)
 
 ## 功能：
 
@@ -31,6 +33,16 @@ http://restaurant.yunan.tw/
 **前台**
 
 * 購物車及訂單功能
+  
+  ![](./readmeImg/cartlist.PNG)
+
+  ![](./readmeImg/cartsuccess.PNG)
+
+* 抽獎
+
+  ![](./readmeImg/lotto.PNG)
+
+* 查看常見問題
 
 ## 架構
 
@@ -42,6 +54,3 @@ http://restaurant.yunan.tw/
 * menu： 點餐，加入購物車
 * cart： 訂單，處理訂單數量更改/ 訂購人資訊
 * faq： 常見問題
-
-
-https://github.com/Lidemy/mentor-program-4th/tree/master/homeworks/week18

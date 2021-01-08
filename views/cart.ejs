@@ -48,7 +48,6 @@
                   <!-- 調整數量 -->
                   <li>
                     <form action="/update-cart/<%= i %>" method="POST">
-                      <!-- TODO: -->
                       <input type="text" value="<%= JSON.parse(cart.quanlity)[i] %>" name="quanlity">
                       <% if (errorMessageCart) { %>
                         <div><%= errorMessageCart %></div>

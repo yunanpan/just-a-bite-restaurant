@@ -62,7 +62,6 @@ const cart = {
     const index = req.params.id;
     const { quanlity } = req.body;
 
-    // TODO: quanlity 要是正整數
     if (!Number.isInteger(Number(quanlity))) {
       req.flash("errorMessageCart", "需為數字");
       return res.redirect("/cart");

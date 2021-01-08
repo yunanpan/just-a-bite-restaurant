@@ -1,6 +1,7 @@
 # 咬一口餐廳
 
 主要為使用 Express + Sequlize 所實作的餐廳網站。 
+
 利用 nginx 及 PM2 部署在 AWS EC2 Ubuntu 主機上，並架設到指定網域。
 
 ## DEMO 網址：

@@ -16,7 +16,7 @@ $color-neutral: #97a2a0;
 $color-neutral-light: #cdcdcd;
 
 // font size
-$font-size-large-plus: 60px; 
+$font-size-large-plus: 60px;
 $font-size-large: 36px;
 $font-size-medium-plus: 28px;
 $font-size-medium: 18px; // 16~18
@@ -27,10 +27,9 @@ $font-size-small: 12px;
 $align-line-height-large: $font-size-medium-plus; // for topic & num
 $align-line-height-small: $font-size-medium; // for topic & num
 
-
 @mixin phone-width() {
   @media screen and (max-width: 768px) {
-      @content;
+    @content;
   }
 }
 
@@ -90,7 +89,7 @@ $align-line-height-small: $font-size-medium; // for topic & num
   position: relative;
 
   &__img {
-    background-image: url('../img/2-min.png');
+    background-image: url("../img/2-min.png");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -101,7 +100,7 @@ $align-line-height-small: $font-size-medium; // for topic & num
     }
 
     &-menu {
-      background-image: url('../img/menu/menu-1.png');
+      background-image: url("../img/menu/menu-1.png");
       height: 280px;
     }
   }
@@ -113,7 +112,7 @@ $align-line-height-small: $font-size-medium; // for topic & num
     width: 100%;
     height: 100%;
     background-color: $color-secondary-dark;
-    opacity: .3;
+    opacity: 0.3;
   }
 
   &__title {
@@ -161,7 +160,7 @@ $align-line-height-small: $font-size-medium; // for topic & num
   border-left: 15px solid $color-primary-lighter;
   line-height: 40px;
   font-size: $font-size-large;
-  
+
   @include phone-width() {
     font-size: $font-size-medium-plus;
     margin: 40px 0px 20px;
@@ -234,7 +233,6 @@ $align-line-height-small: $font-size-medium; // for topic & num
   }
 
   &__image {
-
     width: 100%;
     position: relative;
 
@@ -268,7 +266,8 @@ $align-line-height-small: $font-size-medium; // for topic & num
       margin-top: 10px;
     }
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: "";
       display: block;
       position: relative;
@@ -351,7 +350,7 @@ $align-line-height-small: $font-size-medium; // for topic & num
       margin: 97px;
 
       @include phone-width() {
-        margin: 20px 0px
+        margin: 20px 0px;
       }
 
       p {
@@ -511,7 +510,6 @@ $align-line-height-small: $font-size-medium; // for topic & num
   }
 
   &__contact {
-
     @include phone-width() {
       margin-bottom: 10px;
     }
@@ -538,7 +536,7 @@ $align-line-height-small: $font-size-medium; // for topic & num
     text-align: center;
     font-size: $font-size-medium;
     color: $color-tertiary-light;
-    
+
     @include phone-width() {
       font-size: $font-size-small;
     }
@@ -585,7 +583,8 @@ $align-line-height-small: $font-size-medium; // for topic & num
     display: inline-block;
   }
 
-  &__topic, &__topic-list {
+  &__topic,
+  &__topic-list {
     font-size: $font-size-medium;
     /* 為了讓 num 與 topic 對齊 => 設定相同 line-height */
     line-height: $align-line-height-large;
@@ -627,7 +626,6 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 90vh;
-  
 
   &__wrap {
     position: relative;
@@ -716,7 +714,8 @@ table {
   border: 2px solid $color-primary-dark;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
   border: 1px solid $color-primary-dark;
@@ -733,10 +732,11 @@ th, td {
     border: none;
   }
 
-  th, td {
+  th,
+  td {
     border: none;
   }
-  
+
   a {
     // text-decoration: none;
     color: #f8f8f8;
@@ -767,7 +767,7 @@ th, td {
     margin-bottom: 42px;
     text-align: left;
   }
-  
+
   &__img {
     margin: auto;
     width: 80px;
@@ -872,7 +872,7 @@ th, td {
       width: 100%;
       border: none;
       border-radius: 3px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 
       &:focus {
         outline: none;
@@ -886,7 +886,7 @@ th, td {
     border-radius: 3px;
     background-color: $color-neutral;
     border: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-size: $font-size-small-plus;
 
     &:focus {
@@ -909,7 +909,7 @@ th, td {
     border-radius: 3px;
 
     &:hover {
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
   }
 }
@@ -922,10 +922,11 @@ th, td {
   margin: 50px auto 10px;
   width: 100%;
 
-  &-thead, &-tbody {
+  &-thead,
+  &-tbody {
     display: flex;
     justify-content: space-between;
-  
+
     li {
       padding: 3px;
       width: 25%;
@@ -965,10 +966,11 @@ th, td {
   margin: 50px auto 10px;
   width: 100%;
 
-  &-thead, &-tbody {
+  &-thead,
+  &-tbody {
     display: flex;
     justify-content: space-between;
-  
+
     li {
       padding: 3px;
       width: 25%;
@@ -986,7 +988,6 @@ th, td {
     max-width: 20px;
   }
 }
-
 
 // =============================
 
@@ -1028,7 +1029,7 @@ th, td {
   }
 
   &__product {
-    border-bottom: .5px solid  $color-primary-darker;
+    border-bottom: 0.5px solid $color-primary-darker;
   }
 
   &__total {

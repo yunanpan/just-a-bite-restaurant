@@ -48,7 +48,11 @@
                   <!-- 調整數量 -->
                   <li>
                     <form action="/update-cart/<%= i %>" method="POST">
+                      <!-- TODO: -->
                       <input type="text" value="<%= JSON.parse(cart.quanlity)[i] %>" name="quanlity">
+                      <% if (errorMessageCart) { %>
+                        <div><%= errorMessageCart %></div>
+                      <% } %>
                     </form>
                   </li>     
                   <li class="sum">$<%= JSON.parse(cart.price)[i] * JSON.parse(cart.quanlity)[i]  %></li>
@@ -58,20 +62,6 @@
             
             <% } %>
           <% } %>
-
-        <!-- === -->
-        <!-- 暫不管總計 -->
-        <!-- <tr class="cart__footer">
-          <td colspan="7">
-            小計：$920
-          </td>
-        </tr>
-        <tr class="cart__footer">
-          <td colspan="7">
-            購物滿1000免運！ 運費：$99
-          </td>
-        </tr> -->
-        <!-- ==== -->
         <li class="cart__footer">
           <td colspan="7">
             $<%= sum %>

@@ -52,6 +52,7 @@ app.use((req, res, next) => {
   res.locals.prices = req.session.prices;
   res.locals.quanlities = req.session.quanlities;
   res.locals.errorMessage = req.flash("errorMessage");
+  res.locals.errorMessageCart = req.flash("errorMessageCart");
   next();
 });
 

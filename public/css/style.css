@@ -640,7 +640,8 @@ table {
   border: 2px solid #3e613d;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
   border: 1px solid #3e613d;
@@ -656,7 +657,8 @@ th, td {
   width: 100%;
   border: none;
 }
-.cart th, .cart td {
+.cart th,
+.cart td {
   border: none;
 }
 .cart a {
